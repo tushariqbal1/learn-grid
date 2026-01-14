@@ -8,15 +8,22 @@
     <style>
         .container {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(3, 200px) 60px 60px;
             gap: 20px;
+            grid-template-columns: repeat(4, 1fr);
+           grid-template-rows: repeat(3,200px) 50px 50px;
+           
+            /* if every box need to same size */
+            /* grid-template-rows: repeat(10, 200px) 200px 200px; */
         }
 
         .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background-color: gray;
             padding: 20px;
             border-radius: 8px;
+
         }
 
         .sidebar {
@@ -39,15 +46,15 @@
             }
 
             .sidebar {
-                grid-column: span 2;
                 grid-row: span 1;
+                grid-column: span 2;
             }
 
             .box,
             .footer {
                 grid-column: span 2;
+                grid-row: span 1;
             }
-
         }
     </style>
 </head>
