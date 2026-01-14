@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Image grid</title>
     <style>
         .container {
             display: grid;
-            gap: 3px;
             grid-template-columns: repeat(6, 1fr);
             grid-template-rows: repeat(6, 150px);
+            gap: 3px;
         }
 
         img {
@@ -34,9 +33,18 @@
             grid-row: span 1;
         }
 
-        .small-layout {
-            grid-column: span 1;
-            grid-row: span 1;
+        @media screen and (max-width:576px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .big-layout,
+            .normal-layout,
+            .wide-layout,
+            .small-layout {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
         }
     </style>
 </head>
@@ -54,6 +62,7 @@
         <div class="normal-layout"><img src="images/I.jpg" alt=""></div>
         <div class="small-layout"><img src="images/G.jpg" alt=""></div>
         <div class="small-layout"><img src="images/G.jpg" alt=""></div>
+
     </div>
 </body>
 
